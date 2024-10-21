@@ -1,5 +1,8 @@
 import os
 from flask import Flask, jsonify, request
+from modules.AddOp import add 
+from modules.SubOp import sub
+from modules.mult import mult
 
 app = Flask(__name__)
 
@@ -10,9 +13,9 @@ def f(x,y):
 
 
 operations = {
-    'add' : lambda x , y : x+y,
-    'subtract' : lambda x , y : x-y,
-    'multiply' : lambda x , y : x*y,
+    'add' : lambda x , y : add(x,y),
+    'subtract' : lambda x , y : sub(x,y),
+    'multiply' : lambda x , y : mult(x,y),
     'divide' : lambda x , y : f(x,y) ,
 
 }
